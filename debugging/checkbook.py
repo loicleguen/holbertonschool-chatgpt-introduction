@@ -32,6 +32,13 @@ class Checkbook:
         """Print the current balance."""
         print("Current Balance: ${:.2f}".format(self.balance))
 
+def get_valid_amount(prompt):
+    """Ask the user for a valid numeric amount."""
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
 
 def main():
     cb = Checkbook()
